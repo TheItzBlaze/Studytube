@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YouTube Locked</title>
+  <style>
+    @font-face {
+      font-family: "Poppins";
+      src: url("assets/fonts/Poppins-Regular.ttf") format("truetype");
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: "Poppins";
+      src: url("assets/fonts/Poppins-SemiBold.ttf") format("truetype");
+      font-weight: 600;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: "Poppins";
+      src: url("assets/fonts/Poppins-Bold.ttf") format("truetype");
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: "Poppins";
+      src: url("assets/fonts/Poppins-ExtraBold.ttf") format("truetype");
+      font-weight: 800;
+      font-style: normal;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Poppins", Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(99, 102, 241, 0.20), transparent 30%),
+        radial-gradient(circle at top right, rgba(59, 130, 246, 0.18), transparent 28%),
+        radial-gradient(circle at bottom center, rgba(168, 85, 247, 0.18), transparent 32%),
+        rgba(3, 7, 18, 0.16);
+    }
+
+    .bg-gif {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.02);
+      filter: blur(2px) brightness(0.9) saturate(1.08);
+      opacity: 1;
+      pointer-events: none;
+    }
+
+    .dim {
+      position: fixed;
+      inset: 0;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.00)),
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.03), transparent 20%),
+        radial-gradient(circle at 80% 30%, rgba(255,255,255,0.02), transparent 18%),
+        radial-gradient(circle at 50% 80%, rgba(255,255,255,0.02), transparent 22%),
+        linear-gradient(180deg, rgba(2, 6, 23, 0.04), rgba(2, 6, 23, 0.10));
+      pointer-events: none;
+    }
+
+    .card {
+      position: relative;
+      z-index: 2;
+      width: min(92vw, 600px);
+      border-radius: 28px;
+      padding: 34px 28px;
+      text-align: center;
+      color: #fff;
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.16);
+      backdrop-filter: blur(28px) saturate(165%);
+      -webkit-backdrop-filter: blur(28px) saturate(165%);
+      box-shadow:
+        0 20px 80px rgba(0,0,0,0.45),
+        inset 0 1px 0 rgba(255,255,255,0.16),
+        inset 0 -1px 0 rgba(255,255,255,0.05);
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: 40px;
+      line-height: 1.02;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      text-shadow: 0 4px 28px rgba(255, 255, 255, 0.16);
+    }
+
+    p {
+      margin: 8px 0;
+      font-size: 15px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.88);
+    }
+
+    #timer {
+      margin: 18px 0 10px;
+      font-size: 58px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      text-shadow:
+        0 0 18px rgba(255,255,255,0.22),
+        0 0 42px rgba(99,102,241,0.20);
+    }
+
+    .sub {
+      opacity: 0.76;
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .brand {
+      margin-top: 18px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.72);
+    }
+
+    .accent {
+      position: absolute;
+      left: 50%;
+      bottom: -90px;
+      transform: translateX(-50%);
+      width: 280px;
+      height: 280px;
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(99,102,241,0.35), rgba(59,130,246,0.16), transparent 70%);
+      filter: blur(28px);
+      pointer-events: none;
+    }
+
+    .ok {
+      margin-top: 18px;
+      padding: 13px 18px;
+      font-size: 14px;
+      font-weight: 700;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 14px;
+      background: rgba(255,255,255,0.12);
+      color: #fff;
+      cursor: pointer;
+      display: none;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow:
+        0 10px 30px rgba(0,0,0,0.28),
+        inset 0 1px 0 rgba(255,255,255,0.14);
+    }
+
+    .ok:hover {
+      background: rgba(255,255,255,0.18);
+    }
+  </style>
+</head>
+<body>
+  <img class="bg-gif" src="assets/media/bg.gif" alt="" />
+  <div class="dim"></div>
+
+  <div class="card">
+    <h1>Back to work.</h1>
+    <p>You opened a short-form video, so YouTube is locked for 2 minutes.</p>
+    <div id="timer">2:00</div>
+    <p class="sub">When the timer ends, you can return to normal browsing.</p>
+    <button id="resumeBtn" class="ok">Resume work</button>
+    <div class="brand">Made by ItzBlaze</div>
+    <div class="accent"></div>
+  </div>
+
+  <script src="blocker.js"></script>
+</body>
+</html>

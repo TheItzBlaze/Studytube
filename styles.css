@@ -1,0 +1,137 @@
+@font-face {
+  font-family: "Poppins";
+  src: url("assets/fonts/Poppins-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("assets/fonts/Poppins-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("assets/fonts/Poppins-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("assets/fonts/Poppins-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+#yt-shorts-lock-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483647;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-family: "Poppins", Arial, sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(99, 102, 241, 0.14), transparent 30%),
+    radial-gradient(circle at top right, rgba(59, 130, 246, 0.12), transparent 28%),
+    radial-gradient(circle at bottom center, rgba(168, 85, 247, 0.12), transparent 32%),
+    rgba(3, 7, 18, 0.08);
+  backdrop-filter: blur(0px) saturate(120%);
+  -webkit-backdrop-filter: blur(0px) saturate(120%);
+}
+
+.yt-shorts-lock-bg-gif {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(2px) brightness(0.84) saturate(1.08);
+  transform: scale(1.02);
+  opacity: 0.96;
+  pointer-events: none;
+}
+
+#yt-shorts-lock-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.00)),
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.03), transparent 20%),
+    radial-gradient(circle at 80% 30%, rgba(255,255,255,0.02), transparent 18%),
+    radial-gradient(circle at 50% 80%, rgba(255,255,255,0.02), transparent 22%),
+    linear-gradient(180deg, rgba(2, 6, 23, 0.04), rgba(2, 6, 23, 0.10));
+  pointer-events: none;
+}
+
+.yt-shorts-lock-box {
+  position: relative;
+  z-index: 2;
+  width: min(92vw, 560px);
+  padding: 32px 28px;
+  border-radius: 28px;
+  text-align: center;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow:
+    0 20px 80px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(26px) saturate(160%);
+  -webkit-backdrop-filter: blur(26px) saturate(160%);
+}
+
+.yt-shorts-lock-box h1 {
+  margin: 0 0 10px;
+  font-size: 36px;
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  text-shadow: 0 4px 28px rgba(255, 255, 255, 0.16);
+}
+
+.yt-shorts-lock-box p {
+  margin: 8px 0;
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+#yt-shorts-lock-timer {
+  margin-top: 18px;
+  font-size: 54px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: #ffffff;
+  text-shadow:
+    0 0 18px rgba(255,255,255,0.22),
+    0 0 42px rgba(99,102,241,0.20);
+}
+
+.yt-shorts-lock-brand {
+  margin-top: 18px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.72);
+}
+
+.yt-shorts-lock-accent {
+  position: absolute;
+  inset: auto 50% -90px 50%;
+  transform: translateX(-50%);
+  width: 280px;
+  height: 280px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(99,102,241,0.35), rgba(59,130,246,0.16), transparent 70%);
+  filter: blur(28px);
+  pointer-events: none;
+}

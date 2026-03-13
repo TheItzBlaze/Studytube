@@ -1,0 +1,56 @@
+{
+  "manifest_version": 3,
+  "name": "Studytube",
+  "version": "1.0.1",
+  "description": "Removes YouTube Shorts and locks YouTube for 2 minutes if a Shorts video is opened.",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "permissions": ["storage", "tabs", "alarms"],
+  "host_permissions": [
+    "https://www.youtube.com/*",
+    "https://m.youtube.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.youtube.com/*",
+        "https://m.youtube.com/*"
+      ],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "blocker.html",
+        "blocker.js",
+        "assets/fonts/Poppins-Regular.ttf",
+        "assets/fonts/Poppins-SemiBold.ttf",
+        "assets/fonts/Poppins-Bold.ttf",
+        "assets/fonts/Poppins-ExtraBold.ttf",
+        "assets/media/bg.gif"
+      ],
+      "matches": [
+        "https://www.youtube.com/*",
+        "https://m.youtube.com/*",
+        "chrome-extension://*/*"
+      ]
+    }
+  ],
+  "action": {
+    "default_title": "YouTube Shorts Blocker",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  }
+}
